@@ -10,7 +10,10 @@ class UserProfileView(APIView):
     def get(self, request):
         """Endpoint to retrieve user's profile"""
         user = request.user
-        user_profile = Profile.objects.get(user=user)
+        try:
+            user_profile = Profile.objects.get(user=user)
+        except Exception:
+            return Response({'message': "Profile is not registered."}, status=status.HTTP_400_BAD_REQUEST)
         serializer = ProfileSerializer(user_profile)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
