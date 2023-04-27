@@ -17,6 +17,7 @@ from core.views.like_post_api_view import LikePostAPIView
 from core.views.unlike_post_api_view import UnlikePostAPIView
 from core.views.comment_create_view import CommentCreateAPIView
 from core.views.all_posts_view import AllPostsAPIView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # from core.views.custom_user_auth_views import CustomTokenObtainPairView
 
 urlpatterns = [
@@ -34,3 +35,5 @@ urlpatterns = [
     path('api/comment/<int:id>', CommentCreateAPIView.as_view(), name='create_comment'),
     path('api/all_posts/', AllPostsAPIView.as_view(), name='all_posts'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
