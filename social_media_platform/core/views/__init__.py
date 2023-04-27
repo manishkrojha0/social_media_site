@@ -1,0 +1,1 @@
+from .custom_user_auth_views import CustomTokenObtainPairView
