@@ -22,10 +22,14 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.PrimaryKeyRelatedField(read_only=True)
+    likes = serializers.SerializerMethodField()
+
+    def get_likes(self, post):
+        return post.likes.count()
 
     class Meta:
         model = post.Post
-        fields = ['id', 'title', 'description', 'created_at', 'author']
+        fields = ['id', 'title', 'description', 'created_at', 'author', 'likes']
 
     def create(self, validated_data):
         validated_data['author'] = self.context['request'].user
@@ -36,6 +40,10 @@ class CommentSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
     post = PostSerializer(read_only=True)
     id = serializers.IntegerField(read_only=True)
+    likes = serializers.SerializerMethodField()
+
+    def get_likes(self, comment):
+        return comment.likes.count()
 
     class Meta:
         model = comment.Comment
