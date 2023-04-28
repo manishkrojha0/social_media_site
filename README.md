@@ -1,4 +1,4 @@
-Social Media Site
+###Social Media Site
 
 This is a social media platform built with Django and Django Rest Framework (DRF). The application allows users to create accounts, create and edit their profiles, follow and unfollow other users, post images and view posts of other users.
 Installation and Setup
