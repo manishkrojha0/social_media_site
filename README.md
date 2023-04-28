@@ -9,7 +9,8 @@
     - Run the application using python manage.py runserver
 
 ### Test cases
-    - Test the application testcases by using the command **python manage.py test core.test_cases**
+  - test cases to test the urls and endpoints of the project.
+    - python manage.py test core.test_cases
 
 ### Docker
 
