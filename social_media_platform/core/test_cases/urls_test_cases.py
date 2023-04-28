@@ -27,9 +27,14 @@ class UrlsTestCase(APITestCase):
     def test_follow_url(self):
         user2 = User.objects.create_user(
             username='testuser2', email='testuser2@test.com', password='testpass')
+        # create file of current user.
+        Profile.objects.create(user=self.user, bio="test")
         url = reverse('follow', args=[user2.pk])
+        self.client.force_authenticate(user=self.user)
+        # create profile of user to be followed.
         Profile.objects.create(user=user2, bio="test")
         response = self.client.post(url)
+        print(response.data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_user_profile_url(self):
@@ -41,8 +46,14 @@ class UrlsTestCase(APITestCase):
     def test_unfollow_url(self):
         user2 = User.objects.create_user(
             username='testuser2', email='testuser2@test.com', password='testpass')
+        self.client.force_authenticate(user=self.user)
+        # create file of current user.
+        Profile.objects.create(user=self.user, bio="test")
+        # create profile of user to be unfollowed.
+        Profile.objects.create(user=user2, bio="test")
         url = reverse('unfollow', args=[user2.pk])
         response = self.client.post(url)
+        print(response.data, "responseeeeeeeeeeee")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_user_info_url(self):
@@ -71,11 +82,14 @@ class UrlsTestCase(APITestCase):
         Profile.objects.create(user=self.user, bio="test")
         response = self.client.post(url)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        return post.id
 
     def test_unlike_post_view_url(self):
-        post = Post.objects.create(title='test post', description='test content', author=self.user)
-        url = reverse('unlike_post_view', args=[post.pk])
+        # post = Post.objects.create(title='test post', description='test content', author=self.user)
+        post_id = self.test_like_create_view_url()
+        url = reverse('unlike_post_view', args=[post_id])
         response = self.client.post(url)
+        print(response.data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_create_comment_url(self):
