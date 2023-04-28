@@ -10,7 +10,7 @@
 
 ### Test cases
   - test cases to test the urls and endpoints of the project.
-    - python manage.py test core.test_cases
+    - ``python manage.py test core.test_cases``
 
 ### Docker
 
