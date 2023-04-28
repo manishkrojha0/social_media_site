@@ -18,6 +18,10 @@
     - Run **docker-compose up** to start the Docker container
     - Access the application at http://0.0.0.0:8000/
 
+### Deployment
+ - Deployment has been done on render, link to my deployed url - https://minsta-ymk1.onrender.com/admin
+ - You have to go through the postman api collections, I've mentioned below.
+
 ### API Endpoints
 
 - POSTMAN API COLLECTIONS - [social_media_site](https://api.postman.com/collections/17905617-c5e99e7a-5137-4ea6-9a48-40700e5559c6?access_key=PMAT-01GZ3P24CHB8HP03CDEE1SCCH9)
