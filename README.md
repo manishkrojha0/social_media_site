@@ -8,6 +8,9 @@
     - Install project dependencies using pip install -r requirements.txt
     - Run the application using python manage.py runserver
 
+### Test cases
+    - Test the application testcases by using the command python manage.py test core.test_cases
+
 ### Docker
 
 - A Dockerfile and docker-compose.yml file have been provided for easy deployment. To deploy the application using Docker, follow these steps:
