@@ -24,7 +24,7 @@ class FollowView(APIView):
 
                 profile.followers.add(user.id)
                 profile.save()
-                return Response({'detail': f"You are now following {user_to_follow.username}."}, status=status.HTTP_200_OK)
+                return Response({'detail': f"You are now following {user_to_follow.username}."}, status=status.HTTP_201_CREATED)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:

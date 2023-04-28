@@ -40,14 +40,14 @@ class CommentSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
     post = PostSerializer(read_only=True)
     id = serializers.IntegerField(read_only=True)
-    likes = serializers.SerializerMethodField()
+    likes = serializers.SerializerMethodField(read_only=True)
 
     def get_likes(self, comment):
         return comment.likes.count()
 
     class Meta:
         model = comment.Comment
-        fields = ['id', 'post', 'author', 'comment', 'created_at']
+        fields = ['id', 'post', 'author', 'comment', 'likes', 'created_at']
 
     def create(self, validated_data):
         post_data = validated_data.pop('post')

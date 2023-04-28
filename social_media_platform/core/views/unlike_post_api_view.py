@@ -16,6 +16,6 @@ class UnlikePostAPIView(APIView):
 
         if like:
             like.delete()
-            return Response({'detail': 'Post unliked successfully.'})
+            return Response({'detail': 'Post unliked successfully.'}, status=status.HTTP_201_CREATED)
         else:
             return Response({'detail': 'You have not liked this post yet.'}, status=status.HTTP_400_BAD_REQUEST)

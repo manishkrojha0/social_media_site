@@ -21,6 +21,6 @@ class CustomTokenObtainPairView(TokenObtainPairView):
                 'token': str(token),
                 'refresh_token': str(refresh_token)
             }
-            return Response(response_data, status=status.HTTP_200_OK)
+            return Response(response_data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

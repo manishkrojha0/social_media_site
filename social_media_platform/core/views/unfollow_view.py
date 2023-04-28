@@ -27,4 +27,4 @@ class UnfollowView(APIView):
         print(profile.followers)
         profile.save()
 
-        return Response({'detail': f"You have unfollowed {user_to_unfollow.username}."}, status=status.HTTP_200_OK)
+        return Response({'detail': f"You have unfollowed {user_to_unfollow.username}."}, status=status.HTTP_201_CREATED)
