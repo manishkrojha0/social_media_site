@@ -14,8 +14,8 @@
 
     - Clone this repository using git clone [https://github.com/manishkrojha0/social_media_site](https://github.com/manishkrojha0/social_media_site.git)
     - Navigate to the project directory cd social_media_site
-    - Run docker-compose build to build the Docker image
-    - Run docker-compose up to start the Docker container
+    - Run **docker-compose build** to build the Docker image
+    - Run **docker-compose up** to start the Docker container
     - Access the application at http://0.0.0.0:8000/
 
 ### API Endpoints
