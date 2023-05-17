@@ -49,7 +49,7 @@
     - Run the Docker container:
        ```bash
           docker run -p 8000:8000 social_media_platform
-    - Access the application at http://0.0.0.0:8000/
+    - Access the application at http://localhost:8000
 
 ### Deployment
  - Deployment has been done on render, link to my deployed url - https://minsta-ymk1.onrender.com/admin
