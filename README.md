@@ -24,11 +24,11 @@
            docker buid .
     - Run this commant to build the multiple Docker images if you want.
       ```bash
-         docker-compos
+         docker-compose build
          
     - Run this command to start the Docker container
        ```bash
-          docker-compose up** 
+          docker-compose up
     - Access the application at http://0.0.0.0:8000/
 
 ### Deployment
