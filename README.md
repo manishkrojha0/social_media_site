@@ -33,7 +33,7 @@
 
     - Clone this repository
       ```bash
-      git clone [https://github.com/manishkrojha0/social_media_site](https://github.com/manishkrojha0/social_media_site.git)
+      git clone https://github.com/manishkrojha0/social_media_site.git
     - Navigate to the project directory
       ```bash
       cd social_media_site
