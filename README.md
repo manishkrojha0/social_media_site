@@ -6,7 +6,7 @@
     - Clone this repository using git clone https://github.com/manishkrojha0/social_media_site.git
     - Navigate to the project directory cd social_media_site
     - Install project dependencies using pip install -r requirements.txt
-    - Run the migrations file by command ```bash python manage.py migrate
+    - Run the migrations file by command  python manage.py migrate
     - Run the application using python manage.py runserver
 
 ### Test cases
